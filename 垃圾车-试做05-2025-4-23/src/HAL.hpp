@@ -567,28 +567,28 @@ namespace HAL {
         if (fabs(angle) > ANGLE_THRESHOLD) {
               if (angle > ANGLE_THRESHOLD) {
                 // 右转
-                motor_dir_set(MotorA, 0); motor_duty_set(MotorA, 720);
-                motor_dir_set(MotorB, 1); motor_duty_set(MotorB, 720);
-                motor_dir_set(MotorC, 0); motor_duty_set(MotorC, 720);
-                motor_dir_set(MotorD, 1); motor_duty_set(MotorD, 720);
-            } else if (angle < -ANGLE_THRESHOLD) {
-                // 左转
-                motor_dir_set(MotorA, 1); motor_duty_set(MotorA, 720);
-                motor_dir_set(MotorB, 0); motor_duty_set(MotorB, 720);
+               // motor_dir_set(MotorA, 0); motor_duty_set(MotorA, 720);
+               // motor_dir_set(MotorB, 1); motor_duty_set(MotorB, 720);
                 motor_dir_set(MotorC, 1); motor_duty_set(MotorC, 720);
+                motor_dir_set(MotorD, 1); motor_duty_set(MotorD, 720);
+            } else if (angle < ANGLE_THRESHOLD) {
+                // 左转
+              //motor_dir_set(MotorA, 1); motor_duty_set(MotorA, 720);
+              //motor_dir_set(MotorB, 0); motor_duty_set(MotorB, 720);
+                motor_dir_set(MotorC, 0); motor_duty_set(MotorC, 720);
                 motor_dir_set(MotorD, 0); motor_duty_set(MotorD, 720);
             } else {
                 // 角度误差在可接受范围，停止旋转
-                motor_duty_set(MotorA, 0);
-                motor_duty_set(MotorB, 0);
+                //motor_duty_set(MotorA, 0);
+                //motor_duty_set(MotorB, 0);
                 motor_duty_set(MotorC, 0);
                 motor_duty_set(MotorD, 0);
             }
         } else {
             motor_dir_set(MotorA, 1);motor_duty_set(MotorA, 700);
-            motor_dir_set(MotorB, 1);motor_duty_set(MotorA, 700);
-            motor_dir_set(MotorC, 1);motor_duty_set(MotorA, 700);
-            motor_dir_set(MotorD, 1);motor_duty_set(MotorA, 700);
+            motor_dir_set(MotorB, 1);motor_duty_set(MotorB, 700);
+            motor_dir_set(MotorC, 1);motor_duty_set(MotorC, 700);
+            motor_dir_set(MotorD, 1);motor_duty_set(MotorD, 700);
             LED_close();
         }
         
